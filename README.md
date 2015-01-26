@@ -20,7 +20,7 @@ With Hearty, your /config folder will contain some additional files, specificall
 To begin using Hearty, open up *hearty.php*, declare your environment URLs and keys, and then include the file in index.php:
 
 ```php
-@require_once( '../config/hearty.php' );
+@include( '../config/hearty.php' );
 ```
 
 Please note that multiple environment URLs should be comma-separated:

@@ -4,7 +4,7 @@
 $publicPath = dirname( __FILE__ );
 
 // Ahoy! Include yer hearty master config file
-@require_once( '../config/hearty.php' );
+@include( '../config/hearty.php' );
 
 // Path to your craft/ folder
 $craftPath = '../craft';
