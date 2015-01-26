@@ -27,9 +27,9 @@ Please note that multiple environment URLs should be comma-separated:
 
 ```php
 $envs = array(
-    'dev.example1.com,dev.example2.com' => 'dev',
-    'stage.example1.com' => 'stage',
-    'example.com,www.example.com' => 'prod',
+    'dev' => 'dev.example1.com,dev.example2.com',
+    'stage' => 'stage.example1.com',
+    'prod' => 'example.com,www.example.com',
 );
 ```
 
