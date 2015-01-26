@@ -35,7 +35,7 @@ $envs = array(
 
 ### Important – about local dev:
 
-For local development, Hearty ignores the $env array and just looks for a file called *config.local.php*. If that file is found, local environment is assumed, basically enabling you to use whatever URL you want for local environments. This is a good idea for teams working on the same application, enabling everyone to have their own URL and config file locally.
+For local development, Hearty ignores the $env array and just looks for a file called *config.local.php*. If that file is found, local environment is assumed, basically enabling you to use whatever URL you want for local environments. This is a good idea for teams working on the same application, enabling everyone to easily use their own URL and settings locally.
 
 *It's a super good idea to gitignore config.local.php*.
 
