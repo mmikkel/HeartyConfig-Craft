@@ -6,7 +6,7 @@ This is my multi-environment config setup for Craft CMS. There are many like it,
 
 With Hearty, the current environment is determined based on the host – i.e. $_SERVER[ 'SERVER_NAME' ] – and a map of URLs and environment keys. The idea is to "down-grade" general.php and db.php to just contain default/common settings; placing any additional environment specific settings (such as db credentials etc) in separate files following the template *config.{environment_key}.php*.
 
-Note: Some (many?) ideas borrowed from BarrelStrength's config @ https://github.com/BarrelStrength/Craft-Multi-Environment-Config. A few main differences between their BarrelStrength's setup and mine:
+Note: Some (many?) ideas borrowed from BarrelStrength's config @ https://github.com/BarrelStrength/Craft-Multi-Environment-Config. A few main differences between BarrelStrength's setup and mine include:
 
 - Hearty's environment config files combine database and general settings
 - Hearty's environment config files are kept at root level of the /config folder
