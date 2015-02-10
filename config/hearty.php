@@ -38,6 +38,10 @@ if ( ! defined( 'CRAFT_ENVIRONMENT' ) ) {
 // Set yer config path to the containing folder. Arr!
 define( 'CRAFT_CONFIG_PATH', dirname( __FILE__ ) . '/' );
 
+// Where do ye want yer templates and plugins, matey?
+//define( 'CRAFT_PLUGINS_PATH', '../plugins' );
+//define( 'CRAFT_TEMPLATES_PATH', '../templates' );
+
 // Ensure our urls have the right scheme
 define( 'URI_SCHEME', ( isset( $_SERVER[ 'HTTPS' ] ) ) ? 'https://' : 'http://' );
 
