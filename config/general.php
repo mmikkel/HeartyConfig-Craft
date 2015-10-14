@@ -1,26 +1,30 @@
 <?php
 
-/**
- * General Configuration
- *
- * All of your system's general configuration settings go in here.
- * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
- */
+/* 
 
-// Shouldnt really have to touch this file ever – these are defaults and can/should be overridden in the config.{CRAFT_ENVIRONMENT}.php files
+GENERAL/COMMON SETTINGS
 
-// All Craft config settings are found here: http://buildwithcraft.com/docs/config-settings
+NOTE: Shouldnt really have to touch this file except to change default/common config settings for all environments – for environment specific settings, create an individual config.{CRAFT_ENVIRONMENT}.php file! Note that any config setting in this file can be overridden in the latter.
+
+Documentation on all Craft config settings can be found here: http://buildwithcraft.com/docs/config-settings
+
+*/
 
 $customConfig = array(
 
-	// General settings
+	// Applies to all environments
 	'*' => array(
 
-		/* Hide index.php */
-		'omitScriptNameInUrls' => true,
-
-		/* Environment */
-		'env' => CRAFT_ENVIRONMENT,
+		/*
+		*	General settings
+		*
+		*/
+		// 'appId' => null,
+		// 'cacheDuration' => 'P1D', // One day
+		// 'cacheMethod' => 'file', // 'apc', 'db', 'eaccelerator', 'file', 'memcache', 'redis', 'wincache', 'xcache', or 'zenddata'
+		// 'customAsciiCharMappings' => array(),
+		// 'defaultCookieDomain' => '',
+		// 'devMode' => false,
 		'environmentVariables' => array(
 			'siteUrl'  => CRAFT_SITE_URL,
 			'basePath' => BASEPATH,
@@ -32,61 +36,139 @@ $customConfig = array(
 			// 'assetsPath' => PUBPATH . 'assets',
 			// 'assetsUrl' => CRAFT_SITE_URL . 'assets',
 	  	),
+	  	// 'isSystemOn' => true,
+		// 'logDumpMethod' => 'var_export',
+		// 'overridePhpSessionLocation' => false,
+		// 'phpMaxMemoryLimit' => '256M',
+		// 'phpSessionName' => 'CraftSessionId',
+		// 'runTasksAutomatically' => true,
+		// 'searchIgnoreWords' => array('the', 'and'),
+		// 'sendPoweredByHeader' => true,
+		// 'siteName' => null,
+		'siteUrl' => CRAFT_SITE_URL,
+		// 'timezone' => null,
+		// 'translationDebugOutput' => false,
+		// 'useCompressedJs' => true,
+		// 'useWriteFileLock' => 'auto',
+		// 'useXSendFile' => false,
 
-	    /* Triggers */
-	   	// 'cpTrigger'       => 'manage',
-	    // 'pageTrigger'     => 'page',
+		/*
+		*	Security
+		*
+		*/
+		// 'csrfTokenName' => 'CRAFT_CSRF_TOKEN',
+		// 'defaultFilePermissions' => 0664,
+		// 'defaultFolderPermissions' => 0775,
+		// 'defaultTokenDuration' => 'P1D', // one day
+		// 'enableCsrfProtection' => false, // This setting will be set to true by default in Craft 3.0.
+		// 'tokenParam' => 'token',
+		// 'useSecureCookies' => 'auto',
 
-	    /* Custom vars */
-	 	// 'assetsUri' => '/assets/',
+		/*
+		*	Updates
+		*
+		*/
+		// 'allowAutoUpdates' => true, // true, 'minor-only', 'build-only', or false
+		// 'backupDbOnUpdate' => true,
+		// 'restoreDbOnUpdateFailure' => true,
+		// 'showBetaUpdates' => false,
+
+		/*
+		*	URLs
+		*
+		*/
+		// 'actionTrigger' => 'actions',
+		// 'addTrailingSlashesToUrls' => false,
+		// 'allowUppercaseInSlug' => false,
+		// 'baseCpUrl' => null,
+		// 'cpTrigger' => 'admin',
+		'limitAutoSlugsToAscii' => true, // default false
+		// 'maxSlugIncrement' => 100,
+		'omitScriptNameInUrls' => true, // default false
+		// 'pageTrigger' => 'page',
+		// 'resourceTrigger' => 'cpresources',
+		// 'slugWordSeparator' => '-',
+		// 'usePathInfo' => 'auto',
+
+		/*
+		*	Templating
+		*
+		*/
+		// 'cacheElementQueries' => true,
+		// 'defaultTemplateExtensions' => array('html', 'twig'),
+		// 'enableTemplateCaching' => true,
+		// 'errorTemplatePrefix' => '',
+		// 'indexTemplateFilenames' => array('index'),
+		// 'privateTemplateTrigger' => '_',
+
+		/*
+		*	Users
+		*
+		*/
+		// 'activateAccountFailurePath' => null,
+		// 'activateAccountSuccessPath' => null,
+		// 'autoLoginAfterAccountActivation' => false,
+		// 'blowfishHashCost' => 13,
+		// 'cooldownDuration' => 'PT5M', // Five minutes
+		// 'defaultCpLanguage' => null,
+		// 'invalidLoginWindowDuration' => 'PT1H', // One hour
+		// 'invalidUserTokenPath' => '',
+		// 'loginPath' => 'login',
+		// 'logoutPath' => 'logout',
+		// 'maxInvalidLogins' => 5,
+		// 'postCpLoginRedirect' => 'dashboard',
+		// 'postLoginRedirect' => '',
+		// 'purgePendingUsersDuration' => 'P3M', // 3 months
+		// 'rememberUsernameDuration' => 'P1Y', // 1 year
+		// 'rememberedUserSessionDuration' => 'P2W', // 2 weeks
+		// 'requireMatchingUserAgentForSession' => true,
+		// 'requireUserAgentAndIpForSession' => true,
+		// 'setPasswordPath' => 'setpassword',
+		// 'setPasswordSuccessPath' => '',
+		// 'testToEmailAddress' => null,
+		// 'useEmailAsUsername' => false,
+		// 'userSessionDuration' => 'PT1H', // 1 hour
+		// 'verificationCodeDuration' => 'P1D', // 1 day
+
+		/*
+		*	Assets
+		*
+		*/
+		// 'allowedFileExtensions' => '7z, aiff, asf, avi, bmp, csv, doc, docx, fla, flv, gif, gz, gzip, htm, html, jpeg, jpg, js, mid, mov, mp3, mp4, m4a, m4v, mpc, mpeg, mpg, ods, odt, ogg, ogv, pdf, png, potx, pps, ppsm, ppsx, ppt, pptm, pptx, ppz, pxd, qt, ram, rar, rm, rmi, rmvb, rtf, sdc, sitd, svg, swf, sxc, sxw, tar, tgz, tif, tiff, txt, vob, vsd, wav, webm, wma, wmv, xls, xlsx, zip',
+		'convertFilenamesToAscii' => true, // Default false
+		// 'defaultImageQuality' => 75,
+		// 'extraAllowedFileExtensions' => '',
+		// 'filenameWordSeparator' => '-',
+		'generateTransformsBeforePageLoad' => true, // Default false
+		// 'imageDriver' => null,
+		// 'maxCachedCloudImageSize' => 2000,
+		// 'maxUploadFileSize' => '16777216', // 16MB
+		// 'rotateImagesOnUploadByExifData' => true,
+
+
+		/*
+		*	Custom config values
+		*
+		*/
+
+		/* Environment */
+		'environment' => CRAFT_ENVIRONMENT,
+		// 'assetsUri' => '/assets/',
 		// 'assetsUrl' => CRAFT_SITE_URL . 'assets/',
 		// 'assetsPath' => PUBPATH . 'assets/',
 
-		/* Misc */
-		// 'limitAutoSlugsToAscii' => true,
-		'cache' => true, // Note: this doesn't actually do anything, but is used for conditional caching in templates. See http://craftcms.stackexchange.com/questions/105/what-are-the-best-practices-for-using-the-cache-tag/106#106
-
 	),
 
-	// LOCAL settings
-	'local' => array(
-
-		'devMode' => true,
-		'cache' => false,
-
-		// Some settings helpful for debugging
-        'phpMaxMemoryLimit'          => '256M',
-        'backupDbOnUpdate'           => true,
-        'translationDebugOutput'     => false,
-        'useCompressedJs'            => false,
-        'cacheDuration'              => 'P1D',
-
-		// Member login info duration
-		// http://www.php.net/manual/en/dateinterval.construct.php
-		'userSessionDuration'           => 'P101Y',
-		'rememberedUserSessionDuration' => 'P101Y',
-		'rememberUsernameDuration'      => 'P101Y',
-
-	),
-
-	// DEV settings
-	'dev' => array(
-
-		'devMode'	=> true,
-		'cache' => false,
-
-	),
-
-	// Add additional environments as need be
+	// You can add additional environments here, but I'd recommend creating individual config.{CRAFT_ENVIRONMENT}.php files instead
 
 );
 
 // If an environment config file exists, merge settings.
-if ( is_array( $customEnvConfig = @include( CRAFT_CONFIG_PATH . 'config.' . CRAFT_ENVIRONMENT . '.php' ) ) ) {
-	if ( isset( $customEnvConfig[ 'db' ] ) ) {
-		unset( $customEnvConfig[ 'db' ] );
+if (is_array($customEnvConfig = @include(CRAFT_CONFIG_PATH . 'config.' . CRAFT_ENVIRONMENT . '.php'))) {
+	if (isset($customEnvConfig['db'])) {
+		unset($customEnvConfig['db']);
 	}
-	$customConfig[ CRAFT_ENVIRONMENT ] = array_merge( $customConfig[ CRAFT_ENVIRONMENT ] ? $customConfig[ CRAFT_ENVIRONMENT ] : array(), $customEnvConfig );
+	$customConfig[CRAFT_ENVIRONMENT] = array_merge(isset($customConfig[CRAFT_ENVIRONMENT]) ? $customConfig[CRAFT_ENVIRONMENT] : array(), $customEnvConfig);
 }
 
 return $customConfig;
