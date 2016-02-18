@@ -1,4 +1,4 @@
-# Craft Hearty Config 1.1
+# Craft Hearty Config 1.1.1
 
 This is my multi-environment config setup for Craft CMS. There are many like it, but this one is mine.
 
