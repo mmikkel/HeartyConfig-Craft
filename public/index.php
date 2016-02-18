@@ -6,6 +6,7 @@ $publicPath = dirname(__FILE__);
 // Where do ye want yer templates and plugins, matey?
 $pluginsPath = '../plugins';
 $templatesPath = '../templates';
+$translationsPath = '../translations';
 
 // Path to your craft/ folder
 $craftPath = '../craft';

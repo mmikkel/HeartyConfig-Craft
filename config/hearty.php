@@ -53,13 +53,17 @@ define('CRAFT_SITE_URL', URI_SCHEME . $_SERVER['SERVER_NAME'] . '/');
 define('BASEPATH', realpath(dirname(__FILE__) . '/../') . '/');
 
 // Template and plugins paths
-if (isset($pluginsPath))
+if (isset($pluginsPath) && !defined('CRAFT_PLUGINS_PATH'))
 {
     define('CRAFT_PLUGINS_PATH', rtrim($pluginsPath, '/') . '/');
 }
-if (isset($templatesPath))
+if (isset($templatesPath) && !defined('CRAFT_TEMPLATES_PATH'))
 {
     define('CRAFT_TEMPLATES_PATH', rtrim($templatesPath, '/') . '/');
+}
+if (isset($translationsPath) && !defined('CRAFT_TRANSLATIONS_PATH'))
+{
+    define('CRAFT_TRANSLATIONS_PATH', rtrim($translationsPath, '/') . '/');
 }
 
 // The site's public basepath - usually set in index.php, if not then just use the basepath yep
@@ -69,4 +73,4 @@ if (isset($publicPath)) {
     define('PUBPATH', BASEPATH);
 }
 
-define('HEARTY_CONFIG_VERSION', '1.1');
+define('HEARTY_CONFIG_VERSION', '1.1.1');
