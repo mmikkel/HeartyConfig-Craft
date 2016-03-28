@@ -2,7 +2,7 @@
 
 // What be yer environment URLs, matey?
 $envs = array(
-    'dev' => 'dev.example1.com,dev.example2.com',
+    'dev' => ['dev.example1.com', 'dev.example2.com'],
     'stage' => 'stage.example1.com',
     'prod' => 'example.com,www.example.com',
 );
@@ -25,7 +25,9 @@ if (!defined('CRAFT_ENVIRONMENT')) {
         $host = $_SERVER['SERVER_NAME'];
 
         foreach ($envs as $env => $hosts) {
-            $hosts = explode(',', preg_replace('/\s+/', '', $hosts));
+            if (!is_array($hosts)) {
+                $hosts = explode(',', preg_replace('/\s+/', '', $hosts));
+            }
             if (in_array($host, $hosts)) {
                 define('CRAFT_ENVIRONMENT', $env);
                 break;
