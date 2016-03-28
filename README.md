@@ -1,4 +1,4 @@
-# Craft Hearty Config 1.1.1
+# Craft Hearty Config 1.1.2
 
 This is my multi-environment config setup for Craft CMS. There are many like it, but this one is mine.
 
@@ -20,17 +20,17 @@ With Hearty, your /config folder will contain some additional files, specificall
 To begin using Hearty, open up *hearty.php*, declare your environment URLs and keys, and then include the file in index.php (or just use the index.php example file included with Hearty):
 
 ```php
-@include( '../config/hearty.php' );
+@include('../config/hearty.php');
 ```
 
-Please note that multiple environment URLs should be comma-separated:
+Please note that multiple environment URLs should be either comma-separated, or a multi-dimensional array:
 
 ```php
-$envs = array(
-    'dev' => 'dev.example1.com,dev.example2.com',
+$envs = [
+    'dev' => ['dev.example1.com', 'dev.example2.com'],
     'stage' => 'stage.example1.com',
     'prod' => 'example.com,www.example.com',
-);
+];
 ```
 
 ### Important – about local dev:

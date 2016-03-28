@@ -1,11 +1,11 @@
 <?php
 
 // What be yer environment URLs, matey?
-$envs = array(
+$envs = [
     'dev' => ['dev.example1.com', 'dev.example2.com'],
     'stage' => 'stage.example1.com',
     'prod' => 'example.com,www.example.com',
-);
+];
 
 /*
 *   You probably don't want to edit below this line.
@@ -75,4 +75,4 @@ if (isset($publicPath)) {
     define('PUBPATH', BASEPATH);
 }
 
-define('HEARTY_CONFIG_VERSION', '1.1.1');
+define('HEARTY_CONFIG_VERSION', '1.1.2');
