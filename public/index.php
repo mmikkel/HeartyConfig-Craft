@@ -7,6 +7,7 @@ $publicPath = dirname(__FILE__);
 $pluginsPath = '../plugins';
 $templatesPath = '../templates';
 $translationsPath = '../translations';
+$storagePath = '../storage';
 
 // Path to your craft/ folder
 $craftPath = '../craft';
