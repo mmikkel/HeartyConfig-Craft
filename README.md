@@ -1,4 +1,4 @@
-# Craft Hearty Config 1.1.2
+# Craft Hearty Config 1.1.3
 
 This is my multi-environment config setup for Craft CMS. There are many like it, but this one is mine.
 
@@ -38,10 +38,3 @@ $envs = [
 For local development, Hearty ignores the $env array and just looks for a file called *config.local.php*. If that file is found, local environment is assumed, basically enabling you to use whatever URL and config settings you want for local environments. This is a good idea for teams working on the same application, enabling everyone to easily use their own URL and settings locally. _If you need common config settings for local environments, you can add a "local" environment to general.php and/or db.php._
 
 *It's a super good idea to gitignore config.local.php*.
-
-
-
-
-
-
-
