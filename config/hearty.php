@@ -75,4 +75,9 @@ if (isset($publicPath)) {
     define('PUBPATH', BASEPATH);
 }
 
+// Fix for Valet not setting DOCUMENT_ROOT
+if (CRAFT_ENVIRONMENT === 'local' && $_SERVER['DOCUMENT_ROOT'] !== PUBPATH) {
+  $_SERVER['DOCUMENT_ROOT'] = PUBPATH;
+}
+
 define('HEARTY_CONFIG_VERSION', '1.1.2');
