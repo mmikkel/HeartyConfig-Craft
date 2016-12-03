@@ -71,6 +71,10 @@ if (isset($storagePath) && !defined('CRAFT_STORAGE_PATH'))
 {
     define('CRAFT_STORAGE_PATH', rtrim($storagePath, '/') . '/');
 }
+if (isset($configPath) && !defined('CRAFT_CONFIG_PATH'))
+{
+    define('CRAFT_CONFIG_PATH', rtrim($configPath, '/') . '/');
+}
 
 // The site's public basepath - usually set in index.php, if not then just use the basepath yep
 if (isset($publicPath)) {
